@@ -1,0 +1,16 @@
+<div class="card-columns">
+    <div class="row row-cols-3 row-cols-md-3 g-4">
+        <div class="card" *ngFor="let usuario of usuarios">
+            <img class="card-img-top" [src]="usuario.avatar" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title"> {{ usuario.first_name}} - {{ usuario.last_name }} </h4>
+                <p class="card-text"> {{ usuario.email }} </p>
+                <p class="card-text">
+                    <span class="text-muted">
+                        ID: {{ usuario.id }}
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
