@@ -1,4 +1,20 @@
-<div class="card-columns">
+<div *ngIf="loading" class="alert alert-info text-center" role="alert">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <i class="fa fa-sync fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0"></p>
+</div>
+
+<div *ngIf="error" class="alert alert-danger text-center" role="alert">
+    <h4 class="alert-heading">Error!!!</h4>
+    <pre>
+        {{ error | json }}
+    </pre>
+    <p class="mb-0"></p>
+</div>
+
+<div *ngIf="!loading" class="card-columns">
     <div class="row row-cols-3 row-cols-md-3 g-4">
         <div class="card" *ngFor="let usuario of usuarios">
             <img class="card-img-top" [src]="usuario.avatar" alt="Card image cap">
